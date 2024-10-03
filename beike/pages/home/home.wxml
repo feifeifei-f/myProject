@@ -1,0 +1,129 @@
+<view class="container">
+  <!-- <xfq/> -->
+  <!-- <xfqTwo scrollTop="{{scrollTop}}" /> -->
+  <xfqone />
+  <!-- 顶部标题 -->
+  <view class="header_title">贝壳找房</view>
+  <!-- 轮播图 -->
+  <view class="Swiper_box">
+    <swiper autoplay="true" circular="true" interval="2000" duration="500">
+      <swiper-item>
+        <image src="../../images/lbt1.png" mode="" />
+      </swiper-item>
+      <swiper-item>
+        <image src="../../images/lbt2.png" mode="" />
+      </swiper-item>
+    </swiper>
+  </view>
+  <!-- 搜索栏 -->
+  <view class="search_box">
+    <view class="city_text" bind:tap="toShellAddress">{{cityText}}</view>
+    <view class="search" bind:tap="toSearch">
+      <image src="../../images/search.png" mode="" />
+      <text>你想住在哪？</text>
+    </view>
+  </view>
+  <!-- 大菜单栏 -->
+  <view class="menu_Box">
+    <view class="menu_Box_menu">
+      <image src="../../images/twoHosue.png" mode="" />
+      <text>二手房</text>
+    </view>
+    <view class="menu_Box_menu">
+      <image src="../../images/newHouse.png" mode="" />
+      <text>新房</text>
+    </view>
+    <view class="menu_Box_menu">
+      <image src="../../images/hireHouse.png" mode="" />
+      <text>租房</text>
+    </view>
+    <view class="menu_Box_menu">
+      <image src="../../images/dressHouse.png" mode="" />
+      <text>装修</text>
+    </view>
+    <view class="menu_Box_menu">
+      <image src="../../images/sellHouse.png" mode="" />
+      <text>卖房</text>
+    </view>
+  </view>
+  <!-- 小菜单栏 -->
+  <view class="min_menu_Box">
+
+    <view class="min_Box_menu">
+      <image src="../../images/min_menu_icon/icon01.png" mode="" />
+      <text>品质保洁</text>
+    </view>
+    <view class="min_Box_menu">
+      <image src="../../images/min_menu_icon/icon02.png" mode="" />
+      <text>商铺办公</text>
+    </view>
+    <view class="min_Box_menu">
+      <image src="../../images/min_menu_icon/icon03.png" mode="" />
+      <text>查成交</text>
+    </view>
+    <view class="min_Box_menu">
+      <image src="../../images/min_menu_icon/icon04.png" mode="" />
+      <text>装修报价</text>
+    </view>
+    <view class="min_Box_menu">
+      <image src="../../images/min_menu_icon/icon05.png" mode="" />
+      <text>买卖流程</text>
+    </view>
+    <view class="min_Box_menu">
+      <image src="../../images/min_menu_icon/icon06.png" mode="" />
+      <text>云打印</text>
+    </view>
+    <view class="min_Box_menu">
+      <image src="../../images/min_menu_icon/icon07.png" mode="" />
+      <text>装修案例</text>
+    </view>
+    <view class="min_Box_menu">
+      <image src="../../images/min_menu_icon/icon08.png" mode="" />
+      <text>装修知识</text>
+    </view>
+    <view class="min_Box_menu">
+      <image src="../../images/min_menu_icon/icon09.png" mode="" />
+      <text>去估价</text>
+    </view>
+    <view class="min_Box_menu">
+      <image src="../../images/min_menu_icon/icon10.png" mode="" />
+      <text>土拍信息</text>
+    </view>
+
+  </view>
+  <!-- 广告页 -->
+  <view wx:if="{{flag}}" class="advertisement">
+    <!-- 左边 -->
+    <view class="content_box">
+      <view class="content">
+        <text>为我设计</text>
+        <view>海量户型数据 超多匹配风格</view>
+      </view>
+      <view class="btn">立即体验</view>
+    </view>
+    <!-- 右边 -->
+    <view class="swiperBox">
+      <swiper class="swiper" autoplay="true" circular="true" interval="2000" duration="10">
+        <swiper-item wx:for="{{min_swipers}}" wx:key="index" class="swiper_item">
+          <image src="{{item}}" mode="" />
+        </swiper-item>
+      </swiper>
+    </view>
+    <!-- 顶部关闭 -->
+    <text class="close_btn" bind:tap="closeAdvertisement">x</text>
+  </view>
+  <!-- 导航栏 -->
+
+  <view class="navBox">
+    <view class="nav_box" style=" position:{{ scrollTop>=680?'fixed':''}};top: 3.4rem;">
+      <view wx:for="{{navs}}" wx:key="index" class="{{act===index?'active':''}}" bind:tap="changeNav" data-param="{{index}}">{{item}}</view>
+    </view>
+  </view>
+
+  <!-- 列表 -->
+
+  <list-card wx:if="{{list.length}}" list="{{list}}" ind="{{act}}" />
+  <view wx:else class="list_loading">
+    <van-loading size="24px" color="#3072F6" vertical>加载中...</van-loading>
+  </view>
+</view>

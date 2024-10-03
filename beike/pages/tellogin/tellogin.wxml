@@ -1,0 +1,84 @@
+<!--pages/tellogin/tellogin.wxml-->
+<view class="container">
+  <!-- 顶部 -->
+  <view class="top_box">
+    <custom-card icons="{{icons}}" />
+    <view class="title">登录</view>
+    <view></view>
+  </view>
+  <!-- 验证码登录 -->
+  <view wx:if="{{act==1}}" class="bot_box">
+    <view class="title">验证码登录</view>
+    <!-- 登录框 -->
+    <view class="login_box">
+      <view class="user_box">
+        <input class="weui-input" maxlength="11" bindinput="bindTelInput" placeholder="请输入手机号" />
+        <block wx:if="{{countnum==5 || countnum==-1}}">
+          <view bindtap="timekeep" style="color:#2766f0;border-bottom: none;padding: 0;">获取验证码</view>
+        </block>
+        <block wx:else="{{countnum<=5}}">
+          <view style="color:rgb(165,165,165);border-bottom: none;padding: 0;">{{countnum}}s 后重新发送</view>
+        </block>
+      </view>
+      <view class="pas_box">
+        <input class="weui-input" password bindinput="bindPasInput" placeholder="请输入验证码" />
+      </view>
+
+    </view>
+    <!-- 用户名登录、注册 -->
+    <view class="registerOrlogin">
+      <view></view>
+      <view class="userlgoin" bind:tap="toUserLogin">已有账号?<text>去登录</text></view>
+      <view class="register" bind:tap="toRegister">点击注册</view>
+    </view>
+    <!--登录按钮  -->
+    <van-button wx:if="{{act==1}}" type="info" loading="{{lodingFlag?true:false}}" loading-text="{{lodingFlag?'登录中':'登录'}}" bind:click="register">登录</van-button>
+  </view>
+  <!-- 手机号登录 -->
+  <view wx:elif="{{act==2}}" class="bot_box">
+    <view class="title">手机号登录</view>
+    <!-- 登录框 -->
+    <view class="login_box">
+      <view class="user_box">
+        <input class="weui-input" maxlength="11" bindinput="bindTelInput" placeholder="请输入手机号" />
+      </view>
+      <view class="pas_box">
+        <input type="password" class="weui-input" bindinput="bindPasInput" placeholder="请输入密码" />
+      </view>
+    </view>
+    <!-- 用户名登录、注册 -->
+    <view class="registerOrlogin">
+      <view class="userlgoin" bind:tap="toTelLogin"><text>验证码登录</text></view>
+      <view class="register" bind:tap="toRegister">点击注册</view>
+    </view>
+    <!--登录按钮  -->
+    <van-button wx:if="{{act==2}}" type="info" loading="{{lodingFlag?true:false}}" loading-text="{{lodingFlag?'登录中':'登录'}}" bind:click="login">登录</van-button>
+  
+  </view>
+  <!-- 注册 -->
+  <view wx:else class="bot_box">
+    <view class="title">用户注册</view>
+    <!-- 登录框 -->
+    <view class="login_box">
+      <view class="user_box">
+        <input class="weui-input" maxlength="11" bindinput="bindTelInput" placeholder="请输入手机号" />
+      </view>
+      <view class="pas_box">
+        <input class="weui-input" bindinput="bindUserInput" placeholder="请输入账号" />
+      </view>
+      <view class="pas_box">
+        <input class="weui-input" bindinput="bindEmailInput" placeholder="请输入邮箱" />
+      </view>
+      <view class="pas_box">
+        <input class="weui-input" bindinput="bindPasInput" placeholder="请输入密码" />
+      </view>
+    </view>
+    <!-- 用户名登录、注册 -->
+    <view class="registerOrlogin">
+      <view class="userlgoin" bind:tap="toTelLogin"><text>验证码登录</text></view>
+      <view class="register" bind:tap="toUserLogin">手机号登录</view>
+    </view>
+    <!--登录按钮  -->
+    <van-button wx:if="{{act==3}}" type="info" loading="{{lodingFlag?true:false}}" loading-text="{{lodingFlag?'注册中':'注册'}}" bind:click="register">注册</van-button>
+  </view>
+</view>

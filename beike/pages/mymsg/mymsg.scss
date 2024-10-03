@@ -1,0 +1,125 @@
+/* pages/mymsg/mymsg.wxss */
+page {
+  height: 100%;
+  background: #eff4fd;
+}
+
+.container {
+  padding-top: 3.4rem;
+
+  .header_title {
+    width: 100%;
+    height: 3rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    font-size: 1.3rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #eff4fd;
+    padding-bottom: 0.4rem;
+    z-index: 2;
+  }
+
+  .mesage_box {
+    
+    .user_box {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 1rem;
+      background: #fff;
+      margin: 0.1rem 0.5rem;
+      .image_box {
+        width: 3rem;
+        height: 3rem;
+
+        image {
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      .content_box {
+        flex: 1;
+        display: flex;
+        justify-content: space-between;
+        margin-left: 1rem;
+        padding: 1rem 0;
+        position: relative;
+
+        // border-bottom: 1px solid rgb(226, 226, 226);
+
+        .msg_box {
+          float: 1;
+
+          .msg_title {
+            font-weight: 500;
+            font-family: '微软雅黑';
+            font-size: 1rem;
+            color: #000;
+          }
+
+          .msg_text {
+            width: 450rpx;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            color: #999;
+            font-size: 0.8rem;
+            margin-top: 0.5rem;
+          }
+        }
+
+        .state_box {
+          color: #999;
+          font-size: 0.8rem;
+        }
+      }
+
+    }
+
+    // 删除按钮
+    .van-swipe-cell__right {
+
+      height: 100%;
+      width: 160px;
+      color: white;
+
+      font-size: 1rem;
+
+      view {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .toUp {
+        width: 50%;
+        height: 100%;
+        background-color: rgb(77, 181, 230);
+      }
+
+      .delete {
+        width: 50%;
+        height: 100%;
+        background-color: rgb(233, 79, 79);
+      }
+
+    }
+
+  }
+
+  // 提示
+  .prompt_box {
+
+    background: rgb(255, 255, 255);
+    font-size: 1rem;
+
+    view {
+      padding: 1rem 1.5rem;
+    }
+  }
+}

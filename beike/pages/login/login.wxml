@@ -1,0 +1,28 @@
+<!--pages/login/login.wxml-->
+<view class="container">
+  <view class="top_box">
+  <!-- 胶囊组件 -->
+    <custom-card icons="{{icons}}"/>
+    <view class="title">登录贝壳找房</view>
+    <view></view>
+  </view>
+
+  <view class="content">
+    <image class="logo" src="../../images/login_image/logo.png" mode="" />
+    <view class="bot_box">
+      <view class="quickly_login" bind:tap="toUserlogin">快捷登录</view>
+      <view class="tel_login">
+        <image class="mobile" src="../../images/login_image/mobile.png" mode="" />
+        <text bind:tap="toTelLogin">手机验证码登录</text>
+      </view>
+      <view class="agreement_box">
+        <view class="radio_box">
+          <label catchtap='checkedtap'>
+            <radio checked="{{checked}}" class="radio" color="#3072F7" />
+          </label>
+        </view>
+        <view class="agreement">打勾表示您已阅读并同意以下协议《<text>贝壳用户服务协议</text>》,《<text>贝壳隐私政策</text>》及《<text>贝壳小程序找房隐私保护指引</text>》</view>
+      </view>
+    </view>
+  </view>
+</view>

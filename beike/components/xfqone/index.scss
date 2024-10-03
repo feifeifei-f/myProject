@@ -1,0 +1,23 @@
+.movable-area{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 999;
+}
+.movable-view{
+  /* //可以点击 */
+  pointer-events: auto; 
+}
+.float {
+  text-align: center;
+  border-radius: 50%;
+  // background: #000;
+  image{
+    background: #fff;
+    // border: 1px solid #000;
+  }
+}
+

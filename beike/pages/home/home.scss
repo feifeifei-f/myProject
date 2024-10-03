@@ -1,0 +1,310 @@
+/* pages/home/home.wxss */
+
+@media only screen and (max-width: 600px) {
+  page {
+    max-height: 100vh;
+    // background-color: lightblue;
+    font-size: 16px;
+
+  }
+}
+
+/* 媒体查询：中等屏幕（平板电脑） */
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  page {
+    max-height: 100vh;
+    // background-color: lightgreen;
+    font-size: 18px;
+  }
+
+}
+
+/* 媒体查询：大屏幕（桌面电脑） */
+@media only screen and (min-width: 1025px) {
+  page {
+    max-height: 100vh;
+    // background-color: lightyellow;
+    font-size: 20px;
+  }
+}
+
+.container {
+  // height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background: #F5F5F5;
+  padding-top: 3.4rem;
+
+  // 头部标题
+  .header_title {
+    width: 100%;
+    height: 3rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    font-size: 1.3rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    padding-bottom: 0.4rem;
+
+    z-index: 10;
+  }
+
+  // 轮播图
+  .Swiper_box {
+    background: #fff;
+
+    swiper {
+      background: #EBEBEB;
+      height: 15rem;
+
+      image {
+        width: 100%;
+        height: 100%;
+        border-radius: 0 0 2rem 0;
+      }
+    }
+  }
+
+  // 搜索
+  .search_box {
+    width: 80%;
+    height: 3.3rem;
+    position: absolute;
+    top: 16.7rem;
+    left: 6%;
+    border-radius: 2rem;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+
+    .city_text {
+      font-size: 1rem;
+      position: relative;
+      font-weight: bold;
+
+      &::after {
+        content: "";
+        width: 0;
+        height: 0;
+        border: 5px solid transparent;
+        border-top: 5px solid #000;
+        position: absolute;
+        top: 0.5rem;
+        right: -1rem;
+      }
+    }
+
+    .search {
+      margin-left: 2rem;
+      display: flex;
+      align-items: center;
+
+      image {
+        width: 1.2rem;
+        height: 1.2rem;
+      }
+
+      text {
+        font-size: 1.1rem;
+        font-weight: bold;
+        color: #999;
+        margin-left: 0.5rem;
+      }
+    }
+  }
+
+  // 大菜单栏
+  .menu_Box {
+    display: flex;
+    justify-content: space-between;
+    padding: 2.2rem 1.7rem 0.5rem;
+
+    .menu_Box_menu {
+      width: 16%;
+      height: 5.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      image {
+        width: 95%;
+        height: 65%;
+      }
+
+      text {
+        // font-family: '微软雅黑';
+        margin-top: 0.5rem;
+        font-weight: bold;
+        font-size: 1rem;
+      }
+    }
+  }
+
+  // 小菜单栏
+  .min_menu_Box {
+    margin: 0.5rem 1rem;
+    background: #fff;
+    border-radius: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.4rem 0.7rem;
+    flex-wrap: wrap;
+
+    .min_Box_menu {
+      width: 17%;
+      height: 4rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      image {
+        width: 58%;
+        height: 50%;
+      }
+
+      text {
+        font-size: 0.85rem;
+      }
+    }
+  }
+
+  // 广告
+  .advertisement {
+    margin: 0.5rem 1rem;
+    background: #fff;
+    border-radius: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    padding: 1.2rem 1rem;
+    border: 1px solid #ccc;
+    position: relative;
+    // border-bottom: none;
+
+    // 左边内容
+    .content_box {
+      .content {
+        text {
+          font-weight: bold;
+          font-size: 1rem;
+        }
+
+        view {
+          font-size: 0.8rem;
+          margin-top: 0.3rem;
+        }
+
+      }
+
+      .btn {
+        height: 1.5rem;
+        width: 4rem;
+        background: #89252A;
+        padding: 0.3rem 0.5rem;
+        color: #fff;
+        font-size: 0.8rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 0.3rem;
+        margin-top: 1.2rem;
+
+      }
+    }
+
+    // 轮播图
+    .swiperBox {
+      flex: 1;
+      // background: pink;
+      margin-left: 3rem;
+
+      .swiper {
+        width: 100%;
+        height: 100%;
+
+        .swiper_item {
+          image {
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+
+
+
+    }
+
+    // x号
+    .close_btn {
+      line-height: 0.8rem;
+      position: absolute;
+      top: 0;
+      right: 0;
+      font-size: 0.8rem;
+      background: #ccc;
+      color: #fff;
+      border-radius: 0 0.3rem 0 0.3rem;
+      padding: 0 0.5rem 0.2rem;
+    }
+  }
+
+  // 导航栏
+  .navBox {
+    height: 3.72rem;
+    .nav_box {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      padding: 1.2rem 1rem;
+      font-size: 1rem;
+      color: #555;
+      background: #F5F5F5;
+      z-index: 200;
+      view {
+        margin-right: 1rem;
+      }
+      .active {
+        font-weight: bold;
+        position: relative;
+        color: #000;
+
+        &::after {
+          content: "";
+          width: 2rem;
+          height: 0.4rem;
+          // background: linear-gradient(to top,'#ccc','#fff');
+          background: -webkit-linear-gradient(left, #3072F6, #f9ffff);
+          border-radius:0.5rem 1.5rem;
+          position: absolute;
+          bottom: -0.1rem;
+          left: -0.1rem;
+        }
+
+
+
+      }
+    }
+  }
+
+
+  // 列表加载状态
+  .list_loading{
+    display: flex;
+    justify-content: center;
+    background: #fff;
+    padding: 1.5rem 0;
+    .van-loading__text{
+      color: #3072F6;
+    }
+  }
+
+
+
+}

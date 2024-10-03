@@ -1,0 +1,124 @@
+<view class="container">
+  <custom-card icons="{{icons}}" />
+  <image class="top_img" src="https://img1.baidu.com/it/u=1532577873,2505263705&fm=253&fmt=auto&app=138&f=JPEG?w=701&h=500" mode="aspectFill"></image>
+  <view class="content">
+    <text class="info">选择你的出售方式？</text>
+    <view class="entrust">
+      <view data-show="1" bindtap="tab" class="diamonds {{isShow?'':'blue'}} ">委托方式</view>
+      <view data-show="2" bindtap="tab" class="diamonds {{isShow?'blue':''}} ">自由买房</view>
+    </view>
+    <view style="{{isShow?'display: none;':''}}" class="text">
+      <text space="warn" class="title">
+        客源更多 , 免骚扰 , 出售快
+      </text>
+      <view class="footer">
+        平台负责对您出售的房源进行真实核验，待核验后方可上架进行出售，服务顾问将在24小时与您取得联系，请注意接听服务顾问电话
+      </view>
+    </view>
+    <view style="{{isShow?'':'display: none;'}}" class="text">
+      <text space="warn" class="title">
+        自由交易 , 直接找买家 , 自己谈
+      </text>
+      <view class="footer">
+        自己和买家谈，不想要第三方打扰，手递手的把房子卖给需要的人
+      </view>
+    </view>
+    <button bindtap="publish" class="btn" hover-class="none">发布并支付</button>
+  </view>
+  <!-- 支付弹出层 -->
+  <van-popup show="{{ show }}" round position="bottom" bind:close="onClose" custom-style="height: 50%">
+    <view class="payment_box">
+      <view class="top_box">
+        <image class="close_img" src="../../../images/releasehouse_icon/close.png" mode="" bind:tap="close_van_popup" />
+        <text class="payment_title">请支付</text>
+        <text></text>
+      </view>
+      <view class="content_box">
+        <view class="price_box">
+          <text class="price_icon">￥</text>
+          <text class="price">10.00</text>
+        </view>
+        <view class="payment_type">
+          <view style="font-size: 1rem; margin: 0.5rem 0;">支付方式</view>
+          <van-radio-group value="{{ radio }}" bind:change="onChange">
+            <van-radio name="1">
+              <view class="payment">
+                <image src="../../../images/releasehouse_icon/weixin.png" mode="" />
+                <van-cell title="微信支付" />
+              </view>
+            </van-radio>
+            <van-radio name="2">
+              <view class="payment">
+                <image src="../../../images/releasehouse_icon/zfb.png" mode="" />
+                <van-cell title="支付宝支付" />
+              </view>
+            </van-radio>
+            <van-radio name="3">
+              <view class="payment">
+                <image style="width: 2rem;" src="../../../images/releasehouse_icon/yhk.png" mode="" />
+                <van-cell title="银行卡支付" is-link />
+              </view>
+            </van-radio>
+          </van-radio-group>
+          <view>
+          </view>
+        </view>
+        <view class="bot_box">
+          <van-button round type="info" loading="{{payloading}}" loading-text="立即支付" bind:tap="toPay">立即支付</van-button>
+        </view>
+      </view>
+    </view>
+  </van-popup>
+  <!-- 输入弹出层 -->
+  <van-popup show="{{ inputShow }}">
+    <view class="inputMpney_box">
+      <view class="top_box">
+        <image class="closeInputShow" bind:tap="inputClose" src="../../../images/releasehouse_icon/close1.png" mode="" />
+        <text class="text">请输入支付密码</text>
+        <text></text>
+      </view>
+      <view class="content_box">
+        <view class="payment_title">贝壳网</view>
+        <view class="price_box">
+          <text class="symbol">￥</text>
+          <text class="price">10.00</text>
+        </view>
+        <van-divider customStyle=" border-color: #f4f4f4;" />
+        <view class="Payment_method">
+          <view class="payment_text ">支付方式</view>
+          <view class="right_box">
+            <image class="smallchange_icon" src="../../../images/releasehouse_icon/smallchange.png" mode="" />
+            <text class="text">零钱</text>
+            <image class="right_icon" src="../../../images/releasehouse_icon/right.png" mode="" />
+          </view>
+        </view>
+        <!-- ——————————————————————————————支付密文———————————————————————————————— -->
+        <view class="wallets-password">
+          <view class="input-content-wrap">
+            <view catchtap="set_Focus" class="input-password-wrap">
+              <view class="password_dot">
+                <i wx:if="{{wallets_password.length>=1}}"></i>
+              </view>
+              <view class="password_dot">
+                <i wx:if="{{wallets_password.length>=2}}"></i>
+              </view>
+              <view class="password_dot">
+                <i wx:if="{{wallets_password.length>=3}}"></i>
+              </view>
+              <view class="password_dot">
+                <i wx:if="{{wallets_password.length>=4}}"></i>
+              </view>
+              <view class="password_dot">
+                <i wx:if="{{wallets_password.length>=5}}"></i>
+              </view>
+              <view class="password_dot">
+                <i wx:if="{{wallets_password.length>=6}}"></i>
+              </view>
+            </view>
+          </view>
+          <input bindinput="set_wallets_password" class="input-content" password type="number" value="{{value}}" focus="{{isFocus}}" maxlength="6" />
+        </view>
+      </view>
+    </view>
+  </van-popup>
+</view>

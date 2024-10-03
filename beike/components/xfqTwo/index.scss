@@ -1,0 +1,32 @@
+/* components/xfqTwo/index.wxss */
+
+movable-area {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 50;
+
+  movable-view {
+    pointer-events: auto; //可以点击
+    position: relative;
+  }
+
+  .float_box {
+    display: inline-block;
+    width: 2.3rem;
+    height: 2.3rem;
+    position: absolute;
+    left: 0rem;
+
+    // position: relative;
+    image {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+    }
+
+  }
+}

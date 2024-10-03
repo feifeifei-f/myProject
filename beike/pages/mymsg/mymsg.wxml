@@ -1,0 +1,28 @@
+<view class="container">
+  <view class="header_title">消息</view>
+  <view class="mesage_box">
+    <block wx:for="{{messages_list}}">
+      <van-swipe-cell right-width="{{ 160 }}">
+        <view class="user_box" bind:tap="toMessage" bindlongtap="onLongPress" data-index="{{index}}">
+          <view class="image_box">
+            <image src="{{item.img}}" mode="" />
+          </view>
+          <view class="content_box">
+            <view class="msg_box">
+              <view class="msg_title">{{item.msg_title}}</view>
+              <view class="msg_text">{{item.msg_text}}</view>
+            </view>
+            <view class="state_box">
+              <text>晚上7:49</text>
+            </view>
+          </view>
+        </view>
+        <view slot="right" class="van-swipe-cell__right">
+          <view class="toUp" bind:tap="topChat">置顶</view>
+          <view class="delete" bind:tap="deleteChat">删除</view>
+        </view>
+      </van-swipe-cell>
+    </block>
+
+  </view>
+</view>

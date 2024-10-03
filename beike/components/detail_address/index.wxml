@@ -1,0 +1,23 @@
+<view class="address_conent">
+  <view class="address_card">
+    <view class="address_name">
+      <image src="../../images/detail_image/academic.png" mode="" />
+      <text>翻江倒海刚看到发个方法</text>
+    </view>
+    <view class="distance">直线0.4km</view>
+  </view>
+  <view class="address_card">
+    <view class="address_name">
+      <image src="../../images/detail_image/academic.png" mode="" />
+      <text>翻江倒海刚看到发个方法</text>
+    </view>
+    <view class="distance">直线0.4km</view>
+  </view>
+  <view class="address_card">
+    <view class="address_name">
+      <image src="../../images/detail_image/academic.png" mode="" />
+      <text>翻江倒海刚看到发个方法</text>
+    </view>
+    <view class="distance">直线0.4km</view>
+  </view>
+</view>

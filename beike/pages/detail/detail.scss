@@ -1,0 +1,423 @@
+/* pages/detail/detail.wxss */
+page {
+  height: 100vh;
+  background: #f4f4f4;
+
+  image {
+    width: 1rem;
+    height: 1rem;
+  }
+}
+
+.container {
+  height: 100vh;
+  overflow-y: scroll;
+  position: relative;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  // 图片盒子
+  .box {
+    height: 38%;
+    // background: skyblue;
+    position: relative;
+
+    .picture_box {
+      height: 100%;
+      // background: skyblue;
+      position: relative;
+
+      // vr图标
+      .vr_animation {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 2rem;
+        height: 2rem;
+        transform: translate(-50%, -50%);
+        border: 1px solid rgb(255, 255, 255);
+        border-radius: 50%;
+        padding: 0.2rem ;
+
+        image {
+          animation: scale-fade-follower 5s infinite;
+          animation-delay: 0.1s;
+          border-radius: 50%;
+        }
+
+        @keyframes scale-fade-follower {
+
+          0%,
+          50% {
+            transform: scale(1);
+            opacity: 1;
+          }
+
+          60%,
+          90% {
+            transform: scale(1.5);
+            opacity: 1;
+          }
+
+        }
+      }
+
+
+      image {
+        width: 100%;
+        height: 100%;
+      }
+
+      // 轮播图
+      .swiper {
+        width: 100%;
+        height: 100%;
+
+        .swiper_item {
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+
+    }
+
+    // 渐变
+    .Gradient {
+      width: 100vw;
+      background: transparent;
+      position: absolute;
+      bottom: -1rem;
+      left: 0;
+      box-shadow: 0 -20px 20px 20px rgb(238, 236, 236);
+      // z-index: 2;
+    }
+
+    // 导航
+    .nav_box {
+      position: absolute;
+      top: 74%;
+      left: 2%;
+      display: flex;
+      align-items: center;
+      background: rgba(0, 0, 0, .3);
+      font-size: 0.7rem;
+      padding: 0.14rem 0.15rem 0.15rem 0.18rem;
+      border-radius: 0.8rem;
+      color: #fff;
+      font-weight: bold;
+
+      view {
+        padding: 0.22rem 1rem;
+
+        // background: #fff;
+        &:nth-child(1) {
+          height: 0.95rem;
+          display: flex;
+          align-items: center;
+
+        }
+
+        &.active {
+          background: #fff;
+          border-radius: 0.8rem;
+          color: #3072F6;
+        }
+      }
+
+    }
+  }
+
+  // 底部内容
+  .bot_content {
+    width: 95%;
+    // height: 100rem;
+    position: absolute;
+    top: 17rem;
+    left: 0.6rem;
+    background: #f4f4f4;
+    border-radius: 0.5rem;
+    // padding: 1rem;
+    color: #000;
+
+    &>view {
+      background: #fff;
+      border-radius: 0.5rem;
+      padding: 1rem;
+      margin-bottom: 0.5rem;
+    }
+
+
+    // 基本信息
+    .information {
+
+      // 标题
+      .house_title {
+        font-weight: bold;
+        font-size: 1.4rem;
+        color: #000;
+      }
+
+      // 功能
+      .function_box {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.8rem 0;
+
+        .function_left {
+          display: flex;
+          align-items: center;
+
+          text {
+            padding: 0.1rem 0.3rem;
+            background: #E5EEFF;
+            color: #508bf8;
+            margin-right: 0.5rem;
+            font-size: 0.8rem;
+          }
+        }
+
+        .function_right {
+          display: flex;
+          align-items: center;
+
+          // padding: 1rem 0;
+          &>view {
+            display: flex;
+            align-items: center;
+            margin-left: 1rem;
+
+            image {
+              width: 1.2rem;
+              height: 1.2rem;
+              margin-right: 0.1rem;
+            }
+          }
+        }
+      }
+
+      // 面积
+      .area_box {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        view {
+          view {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #FA5741;
+            display: flex;
+
+            .symbol {
+              font-weight: normal;
+
+            }
+          }
+
+          .size_text {
+            color: #999;
+            font-size: 0.9rem;
+          }
+
+
+        }
+      }
+
+      // VR
+      .VR_box {
+        display: flex;
+        display: flex;
+        justify-content: space-between;
+        padding: 0.7rem 0;
+
+        view {
+          display: flex;
+          align-items: center;
+          padding: 0.7rem 2.4rem;
+          // background: rgb(238, 238, 238);
+          background: #ebebeb;
+          color: #3072F6;
+          background: #edf3ff;
+
+          // color: #508bf8;
+          image {
+            margin-right: 0.3rem;
+          }
+        }
+      }
+
+      // 房子信息
+      .house_information {
+
+        .type_box {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 0.28rem 0;
+          font-size: 0.95rem;
+
+          .left_box {
+            display: flex;
+            align-items: center;
+
+            .left_text {
+              width: 9rem;
+              display: flex;
+              align-items: center;
+              margin-left: 1rem;
+              // color: #000 !important;
+            }
+
+            &>text {
+              &:nth-child(1) {
+                color: #999;
+              }
+
+              &:nth-child(2) {
+                margin-left: 1rem;
+              }
+
+              &:nth-child(3) {
+                color: #999;
+              }
+
+              &:nth-child(4) {
+                margin-left: 1rem;
+              }
+            }
+          }
+
+          .right_img {
+            width: 0.8rem;
+            height: 0.8rem;
+          }
+        }
+
+        //风险提示
+        .prompt_box {
+          height: 2.7rem;
+          padding: 1rem 0;
+          background: #f8f8f8;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+
+          view {
+            display: flex;
+            align-items: center;
+            color: #999;
+
+            image {
+              margin-right: 0.3rem;
+            }
+          }
+        }
+
+      }
+    }
+
+    // 周边信息
+    .Surrounding_facilities {
+
+      // 标题
+      .title_box {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .title {
+          font-size: 1.3rem;
+          font-weight: bold;
+        }
+
+        .top_left {
+          display: flex;
+          align-items: center;
+          color: #999;
+
+          image {
+            width: 0.8rem;
+            height: 0.8rem;
+
+          }
+        }
+      }
+
+      // 地图
+      .map_box {
+        height: 8rem;
+        margin-top: 1.2rem;
+
+        image {
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      // 导航栏
+      .Surrounding_address {
+
+        // 导航
+        .address_nav {
+          display: flex;
+          align-items: center;
+          font-size: 0.7rem;
+          padding: 1rem 0;
+          border-radius: 0.8rem;
+          color: #000;
+          font-weight: bold;
+
+          view {
+            padding: 0.5rem 1rem;
+            background: #f8f8f8;
+            border-radius: 1.5rem;
+            font-size: 0.9rem;
+            margin-right: 0.5rem;
+
+            &.active {
+              background: #EDF3FF;
+              color: #3072F6;
+            }
+          }
+        }
+
+        // 内容
+        .address_conent {
+          display: flex;
+          flex-direction: column;
+
+          .address_card {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.3rem 0;
+
+            .address_name {
+              display: flex;
+              align-items: center;
+              font-size: 1rem;
+
+              image {
+                margin-right: 0.5rem;
+              }
+            }
+
+            .distance {
+              color: #999;
+            }
+          }
+
+        }
+
+
+
+
+      }
+    }
+  }
+
+}

@@ -1,0 +1,56 @@
+<view class="view">
+  <view class="contaier" style="background-color: #FFFFFF;">
+    <view class="top_bg">
+      <view class="one_box">
+        <!-- 第二名 -->
+        <view class="top3">
+          <view class="num_two">
+            <image class="huangguan2" src="../../images/look_img/two.png"></image>
+            <image class="top3_head" src="http://cdn.zhoukaiwen.com/head2.jpg"></image>
+            <!-- <view class="top_name">{{twoName}}</view> -->
+            <view class="top_name">李伟</view>
+          </view>
+        </view>
+
+        <!-- 第一名 -->
+        <view class="top3">
+          <view class="num_one">
+            <image class="huangguan1" src="../../images/look_img/one.png"></image>
+            <image class="top3_head" src="http://cdn.zhoukaiwen.com/head1.jpg"></image>
+            <!-- <view class="top_name" style="font-size: 30rpx;">{{oneName}}</view> -->
+            <view class="top_name text-bold" style="font-size: 30rpx;">王函鑫</view>
+
+          </view>
+        </view>
+
+        <!-- 第三名 -->
+        <view class="top3">
+          <view class="num_three">
+            <image class="huangguan2" src="../../images/look_img/three.png"></image>
+            <image class="top3_head" src="http://cdn.zhoukaiwen.com/head12.jpeg"></image>
+            <view class="top_name">郭均杰</view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class="rankList_box">
+      <view class="rankItem" wx:for="{{rankList}}" :key="index">
+        <view class="rankIndex">
+          <text>{{ index + 4 }}</text>
+        </view>
+        <view class="HeardBox">
+          <image class="rankHeard" src="{{item.headimgurl}} "></image>
+        </view>
+        <view class="NameBox">
+          <view class="userName text-bold">{{item.name}}</view>
+          <view>{{item.text}}</view>
+        </view>
+        <view class="right_box">
+          <image src="../../images/look_img/msg.png" class="msg_img" mode="" />
+          <image src="../../images/look_img/call.png" class="call_img" mode="" />
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

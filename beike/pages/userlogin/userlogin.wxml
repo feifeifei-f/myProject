@@ -1,0 +1,9 @@
+<!--pages/userlogin/userlogin.wxml-->
+<view class="container">
+  <!-- 顶部 -->
+  <view class="top_box">
+   <custom-card icons="{{icons}}"/>
+    <view class="title">登录</view>
+    <view></view>
+  </view>
+</view>

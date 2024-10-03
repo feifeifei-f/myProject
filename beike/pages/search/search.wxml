@@ -1,0 +1,54 @@
+<view class="container">
+  <!-- 顶部 -->
+    <custom-card icons="{{icons}}" />
+  <!-- 搜索 -->
+  <view class="content_box">
+    <!-- 搜索盒子 -->
+    <view class="search_box">
+      <view class="house_text">二手房</view>
+      <text class="border"></text>
+      <view class="search">
+        <image src="{{icon}}" mode="" />
+        <input type="text" bindinput="getText" value="{{search_text}}" data-inp="{{search_text}}" bindconfirm="confirmtap" placeholder="请输入小区" />
+        <text class="searchtext" bind:tap="confirmtap">搜索</text>
+      </view>
+    </view>
+    <!-- 历史记录 -->
+    <view class="history_box">
+      <!-- 历史标题 -->
+      <view class="history_top">
+        <view class="history_title">
+          <image src="../../images/search_image/history.png" mode="" />
+          <text>历史记录</text>
+        </view>
+        <image src="{{clear}}" bind:tap="clearHistory" mode="" />
+      </view>
+      <!-- 内容 -->
+      <view wx:if="{{history_texts}}" class="history_content">
+        <view wx:for="{{history_texts}}" bindlongpress="longClear" data-an="{{index}}" bind:tap="setInput" data-input="{{item}}">{{item}}</view>
+      </view>
+    </view>
+    <!-- 搜索发现 -->
+    <view class="history_box">
+      <!-- 标题 -->
+      <view class="history_top">
+        <view class="history_title">
+          <image src="../../images/search_image/find.png" mode="" />
+          <text>热门搜索</text>
+        </view>
+        <image src="{{eyeflag?eyes:uneyes}}" bind:tap="cahngeEyesFlag" mode="" />
+      </view>
+      <!-- 内容 -->
+      <view wx:if="{{eyeflag}}" class="history_content">
+        <view wx:for="{{findText}}" bindlongpress="longClear" data-an="{{index}}" bind:tap="setInput" data-input="{{item}}">{{item}}</view>
+      </view>
+      <view wx:else class="find_text">数据已隐藏</view>
+    </view>
+
+  </view>
+
+  <view wx:if="{{search_text}}" class="search_TitleList">
+    <view wx:for="{{searchlist}}" wx:key="index" bind:tap="toSearchList" data-id="{{item.id}}" data-inp="{{search_text}}">{{item.title}}</view>
+
+  </view>
+</view>

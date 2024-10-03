@@ -1,0 +1,96 @@
+{
+  "pages": ["pages/home/home",    "pages/search/search","pages/uploadPage/houseUp/houseUp","pages/seatchList/seatchList",
+     "pages/myreleasehouse/myreleasehouse", 
+    
+    "pages/uploadPage/releasehouse/releasehouse",
+  
+    "pages/tellogin/tellogin",
+    "pages/look/look",
+  
+    "pages/uploadPage/paymentSuccessful/paymentSuccessful",
+    "pages/map/map",
+
+    "pages/uploadPage/pay/pay",
+    "pages/mymsg/mymsg",
+
+    "pages/message/message", "pages/userPage/userPage", "pages/user/user", 
+    "pages/ShellAddress/ShellAddress",
+
+    "pages/login/login",
+    "pages/userlogin/userlogin",
+    "pages/VRHouse/VRHouse",
+    "pages/detail/detail"
+
+
+
+
+  ],
+  "tabBar": {
+    "Color": "#2A2A2A",
+    "selectedColor": "#1A66FF",
+    "list": [{
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath": "images/home.png",
+        "selectedIconPath": "images/Selehome.png"
+      },
+      {
+        "pagePath": "pages/look/look",
+        "text": "看看",
+        "iconPath": "images/xing.png",
+        "selectedIconPath": "images/Selexing.png"
+      },
+      {
+        "pagePath": "pages/mymsg/mymsg",
+        "text": "消息",
+        "iconPath": "images/message.png",
+        "selectedIconPath": "images/Selemessage.png"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "text": "个人中心 ",
+        "iconPath": "images/user.png",
+        "selectedIconPath": "images/Seleuser.png"
+      }
+
+    ]
+  },
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "贝壳找房",
+    "navigationBarBackgroundColor": "#ffffff"
+  },
+
+  "componentFramework": "glass-easel",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents",
+  "usingComponents": {
+    "list-card": "/components/list-card",
+    "custom-card": "/components/custom-card",
+    "van-search": "@vant/weapp/search/index",
+    "xfqTwo": "/components/xfqTwo",
+    "detail-address": "/components/detail_address",
+    "van-button": "@vant/weapp/button/index",
+    "van-loading": "@vant/weapp/loading/index",
+    "xfqone": "/components/xfqone",
+    "van-popup": "@vant/weapp/popup/index",
+    "van-cell": "@vant/weapp/cell/index",
+    "van-radio": "@vant/weapp/radio/index",
+    "van-radio-group": "@vant/weapp/radio-group/index",
+    "van-divider": "@vant/weapp/divider/index",
+    "van-transition": "@vant/weapp/transition/index",
+    "van-swipe-cell": "@vant/weapp/swipe-cell/index",
+    "van-uploader": "@vant/weapp/uploader/index"
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "您的位置信息将用于地图功能"
+    },
+    "scope.userInfo": {
+      "desc": "用于获取您的用户信息"
+    },
+    "scope.userRecord": {
+      "desc": "用于发送语音"
+    }
+  }
+}

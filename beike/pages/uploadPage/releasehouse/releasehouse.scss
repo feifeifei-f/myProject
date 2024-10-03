@@ -1,0 +1,308 @@
+.container {
+  padding-top: 3.7rem;
+}
+
+.content {
+  padding: 20rpx 40rpx;
+  box-sizing: border-box;
+}
+
+.top_img {
+  width: 100%;
+  height: 300rpx;
+  margin-bottom: 40rpx;
+}
+
+.info {
+  position: relative;
+  font-weight: bold;
+  font-size: 34rpx;
+  margin-left: 28rpx;
+}
+
+.info::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 12rpx;
+  height: 40rpx;
+  background-color: #3072F6;
+  border-radius: 10rpx;
+  top: -1rpx;
+}
+
+.entrust {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50rpx;
+}
+
+.diamonds {
+  width: 325rpx;
+  height: 120rpx;
+  line-height: 120rpx;
+  text-align: center;
+  background-color: #ececec;
+  border-radius: 18rpx;
+  font-size: 32rpx !important;
+}
+
+.blue {
+  background-color: #3072F6;
+  color: white;
+}
+
+.title {
+  font-weight: bold;
+  margin-bottom: 20rpx;
+  display: block;
+  font-size: 32rpx;
+}
+
+.footer {
+  font-size: 28rpx;
+  color: #b6b6b6;
+  letter-spacing: 3rpx;
+  line-height: 40rpx;
+}
+
+.text {
+  margin-bottom: 300rpx;
+}
+
+.btn {
+  width: 90% !important;
+  border-radius: 50rpx;
+  font-weight: normal;
+  background-color: #3072F6;
+  color: white;
+  margin-top: 40rpx;
+  position: fixed;
+  bottom: 40rpx;
+
+}
+
+.btn:active {
+  filter: brightness(90%);
+}
+
+.payment_box {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  image {
+    width: 1.5rem;
+    height: 1.5rem;
+    margin: 0;
+  }
+
+  .top_box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem;
+
+    .close_img {
+      width: 1.2rem;
+      height: 1.2rem;
+      margin: 0 0 0 0;
+    }
+
+    .payment_title {
+      font-size: 1.2rem;
+    }
+  }
+
+  .content_box {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .price_box {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
+      padding: 1rem;
+
+      .price_icon {
+        font-size: 1rem;
+      }
+
+      .price {
+        font-size: 2.5rem;
+      }
+    }
+
+    .payment_type {
+      padding: 0 1rem;
+
+      .van-radio {
+
+        display: flex;
+        margin: 0.7rem 0;
+        margin-left: 1rem;
+
+        .payment {
+          flex: 1;
+          display: flex;
+          align-items: center;
+
+          .van-cell {
+            padding-left: 0.5rem;
+            width: 20rem;
+          }
+        }
+      }
+
+
+    }
+
+    .bot_box {
+      padding: 1rem 2rem;
+
+      .van-button {
+        width: 100%;
+        font-size: 1rem;
+      }
+    }
+
+
+  }
+
+}
+
+
+// 弹框位置
+.van-popup--center {
+  top: 35% !important;
+  width: 80%;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+// 弹框内容
+.inputMpney_box {
+
+  .top_box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    // 关闭
+    .closeInputShow {
+      width: 1rem;
+      height: 1rem;
+    }
+
+    .text {
+      font-size: 1rem;
+      margin: 0;
+
+    }
+  }
+
+  .content_box {
+    .payment_title {
+      text-align: center;
+      margin: 1rem 0;
+    }
+
+    .price_box {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
+
+      .symbol {
+        height: 2.5rem;
+        font-size: 1.5rem;
+      }
+
+      .price {
+        font-size: 2.5rem;
+      }
+    }
+
+    .Payment_method {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #999;
+
+      .right_box {
+        display: flex;
+        align-items: center;
+
+        .smallchange_icon {
+          width: 1rem;
+          height: 1rem;
+          margin-top: 0.1rem;
+        }
+
+        .text {
+          margin: 0 0.3rem;
+          // height: 1rem;
+        }
+
+        .right_icon {
+          width: 0.8rem;
+          height: 0.8rem;
+          margin-top: 0.2rem;
+        }
+      }
+    }
+  }
+}
+
+// ——————————————————————— 密文样式—————————————————————————————————
+page .wallets-password .input-content-wrap {
+  margin: 2rem 0 1rem;
+}
+
+page .wallets-password .input-content-wrap .input-password-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+page .wallets-password .input-content-wrap .input-password-wrap .password_dot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #000;
+  box-sizing: border-box;
+  width: 90rpx;
+  height: 90rpx;
+  border: 2rpx solid #ddd;
+  border-left: none 0;
+}
+
+page .wallets-password .input-content-wrap .input-password-wrap .password_dot:nth-child(1) {
+  border-left: 2rpx solid #ddd;
+}
+
+page .wallets-password .input-content-wrap .input-password-wrap .password_dot i {
+  background: #000;
+  border-radius: 50%;
+  width: 20rpx;
+  height: 20rpx;
+}
+
+page .wallets-password .input-content {
+  position: absolute;
+  opacity: 0;
+  left: -100%;
+  top: 600rpx;
+  background: #f56;
+  z-index: -999;
+}
+
+page .wallets-password .input-content.active {
+  z-index: -99;
+}

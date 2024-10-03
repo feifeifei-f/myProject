@@ -1,0 +1,118 @@
+/* pages/tellogin/tellogin.wxss */
+page {
+  height: 100%;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+
+  // 顶部
+  .top_box {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 1rem;
+    align-items: center;
+
+    .constom {
+      display: flex;
+      align-items: center;
+      border: 1px solid #ccc;
+      border-radius: 4rem;
+      padding: 0.2rem 0.7rem;
+      justify-content: space-between;
+
+      text {
+        margin: 0 0.7rem;
+        color: #ccc;
+      }
+
+      image {
+        width: 1.5rem;
+        height: 1.5rem;
+      }
+    }
+
+    .title {
+      font-weight: bold;
+      font-size: 1.3rem;
+      margin-right: 6rem;
+      margin-bottom: 0.2rem;
+    }
+  }
+
+  // 底部
+  .bot_box {
+    padding: 1.5rem;
+
+    // 标题
+    .title {
+      font-size: 1.8rem;
+      font-weight: bold;
+      margin: 2rem 0;
+    color: #6598fc;
+    }
+    // 登录盒子
+    .login_box {
+
+      view {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid #bcd2ff;
+        padding: 1.5rem 0.2rem;
+
+        input {
+          font-size: 1rem;
+        }
+
+        text {
+          font-size: 1rem;
+          color: #999;
+        }
+      }
+
+    }
+    // 用户名登录、注册
+    .registerOrlogin{
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 1rem 0;
+      .userlgoin{
+        margin-right: 1rem;
+        text{
+          color: #588fff;
+        }
+      }
+      .register{
+        color: #588fff;
+      }
+    }
+    // 登录按钮
+    .van-button--info {
+      
+      width: 100%;
+      height: 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+     
+      border-radius: 0.5rem;
+      color: #fff;
+      font-size: 1.1rem;
+      background: #3072F7;
+      position: relative;
+      .van-loading{
+        position: absolute;
+        margin-right: -1rem;
+        top: 27%;
+        left: 37%;
+      }
+    }
+
+    .login_btn{
+    
+    }
+  }
+}

@@ -1,0 +1,26 @@
+/* components/detail_address/index.wxss */
+
+.address_conent {
+  display: flex;
+  flex-direction: column;
+
+  .address_card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.3rem 0;
+    .address_name {
+      display: flex;
+      align-items: center;
+      font-size: 1rem;
+      image{
+        margin-right: 0.5rem;
+      }
+    }
+
+    .distance {
+      color: #999;
+    }
+  }
+
+}

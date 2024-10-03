@@ -1,0 +1,12 @@
+<view class="container">
+  <movable-area class="movable-area">
+    <movable-view class="movable-view" x="{{x}}" y="{{y}}" direction="all">
+      <view class="float">
+        <image id="share" style="position:fixed;width:80rpx;height:80rpx;z-index:1002;right: -60rpx;opacity: 0;border-radius: 50%;" src="../../images/xfq_icon/route.png" animation="{{animationShare}}" bindtap="clickShare"></image>
+        <image id="save" style="position:fixed;width:80rpx;height:80rpx;z-index:1002;right: -60rpx;opacity: 0;border-radius: 50%;" src="../../images/xfq_icon/release.png" animation="{{animationSave}}" bindtap="clickSave"></image>
+        <image id="home" style="position:fixed;width:80rpx;height:80rpx;z-index:1002;right: -60rpx;opacity: 0; border-radius: 50%;" src="../../images/xfq_icon/totop.png" animation="{{animationHome}}" bindtap="clickHome"></image>
+        <image style="position:fixed;width:70rpx;height:70rpx;z-index:1002;right: -60rpx;bottom: -65rpx; border-radius: 50%;" src="https://img0.baidu.com/it/u=2439032764,1857694033&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500" bindtap="contorlAnimate"></image>
+      </view>
+    </movable-view>
+  </movable-area>
+</view>

@@ -1,0 +1,13 @@
+<view class="{{icons.ind!==1?'top_box detail_top':'top_box'}}">
+  <view class="{{icons.ind===1?'constom':'constom_detail'}}">
+    <image src="{{icons.callback_icon}}" mode="" bind:tap="callback" />
+    <text></text>
+    <image src="{{icons.tohome_icon}}" mode="" bind:tap="toHome" />
+  </view>
+  <view wx:if="{{icons.ind===1}}" class="title">{{icons.text}}</view>
+  <view wx:else class="share_box">
+      <image src="../../images/detail_image/wx.png" mode="" />
+      <text>分享</text>
+  </view>
+  <view class="nullText"></view>
+</view>

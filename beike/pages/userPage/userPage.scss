@@ -1,0 +1,82 @@
+page {
+  height: 100%;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+
+  // 顶部
+  .top_box {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 1rem 0 1rem;
+    align-items: center;
+
+    .constom {
+      display: flex;
+      align-items: center;
+      border: 1px solid #ccc;
+      border-radius: 4rem;
+      padding: 0.2rem 0.7rem;
+      justify-content: space-between;
+
+      text {
+        margin: 0 0.7rem;
+        color: #ccc;
+      }
+
+      image {
+        width: 1.5rem;
+        height: 1.5rem;
+      }
+    }
+
+    .title {
+      font-weight: bold;
+      font-size: 1.3rem;
+      margin-right: 6rem;
+      margin-bottom: 0.2rem;
+    }
+  }
+
+  // 内容
+  .userBox {
+    padding: 1rem;
+
+    .user_box {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.5rem 0;
+      border-bottom: 1px solid rgb(240, 240, 240);
+
+      .left_type {
+        font-size: 1rem;
+      }
+
+      .user_tel {
+        color: #999;
+      }
+
+      image {
+        width: 1rem;
+        height: 1rem;
+      }
+    }
+  }
+
+  .closeLogin_box {
+    padding: 1rem;
+
+    .van-button {
+      width: 100%;
+      height: 3rem;
+      background: #3072F6;
+      font-size: 1.1rem;
+      border-radius: 0.5rem;
+      // padding: 0.5rem 0;
+    }
+  }
+
+}

@@ -1,0 +1,64 @@
+<view class="container">
+  <!-- 顶部 -->
+  <custom-card icons="{{icons}}" />
+  <!-- 搜索框 -->
+  <view class="search_box">
+    <view class="search">
+      <image src="{{icon}}" mode="" />
+      <input type="text" bindfocus="tosSarch" value="{{inp}}" bindconfirm="confirmtap" />
+    </view>
+  </view>
+
+  <!-- 搜索的数据 -->
+  <view class="search_list">
+    
+    <view wx:if="{{searchlist.length}}" class="list_card" wx:for="{{searchlist}}" wx:key="index" bind:tap="toDetail" data-param="{{item.id}}">
+      <!-- 图片盒子 -->
+      <view class="img_box">
+        <image src="{{item.img}}" mode="" />
+      </view>
+      <!-- 内容盒子 -->
+      <view class="content_box">
+        <view class="title">{{item.title}}</view>
+        <view class="desc">{{item.desc}}</view>
+        <view class="type">
+          <text class="typeOne">热门</text>
+          <text class="typeTwo">满五</text>
+          <text class="typeThree">客厅朝南</text>
+        </view>
+        <view class="price_box">
+          <text class="curPrice">{{item.price}}万</text>
+          <text class="oldPrice">{{item.price1}}</text>
+        </view>
+      </view>
+    </view>
+    <view wx:if="{{!searchlist.length}}" class="showText">未找到您搜索的房源</view>
+  </view>
+
+<!-- 推荐 -->
+  <view class="list_box">
+
+    <view class="search_txt">为您推荐</view>
+    <view class="list_card" wx:for="{{list}}" wx:key="index" bind:tap="toDetail" data-param="{{item.id}}">
+      <!-- 图片盒子 -->
+      <view class="img_box">
+        <image src="{{item.img}}" mode="" />
+        
+      </view>
+      <!-- 内容盒子 -->
+      <view class="content_box">
+        <view class="title">{{item.title}}</view>
+        <view class="desc">{{item.desc}}</view>
+        <view class="type">
+          <text class="typeOne">热门</text>
+          <text class="typeTwo">满五</text>
+          <text class="typeThree">客厅朝南</text>
+        </view>
+        <view class="price_box">
+          <text class="curPrice">{{item.price}}万</text>
+          <text class="oldPrice">{{item.price1}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

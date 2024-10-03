@@ -1,0 +1,47 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px;
+
+  .logo_box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 0;
+
+    .logo_icon {
+      width: 7rem;
+      height: 7rem;
+    }
+
+    .success_text {
+      font-size: 1.3rem;
+      font-weight: bold;
+      color: #1CD66C;
+      margin: 1rem 0;
+    }
+  }
+
+  .content_box {
+    padding: 0 4rem;
+    font-size: 1rem;
+
+    view {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+    }
+  }
+
+  .but_box {
+    display: flex;
+    justify-content: space-between;
+    padding: 7rem 2rem;
+    .van-button {
+      width: 10rem;
+      font-size: 1rem;
+    }
+  }
+}

@@ -1,0 +1,27 @@
+
+<view style="height: 3.55rem;"></view>
+
+<view class="head_ert">
+  <view class="head_input">
+    <image src="../../images/search.png" mode="" />
+    <input type="text" placeholder="请输入城市名称" placeholder-class="place_holder" bindconfirm="getData" bindinput="getData" value="{{value1}}"></input>
+  </view>
+</view>
+
+
+<view wx:if="{{citlist.length>0}}">
+  <view class="Addres">以下揭示</view>
+  <view wx:for="{{citlist}}" wx:key="index">
+    <view class="city_block_item" bind:tap="Cityblock">{{item}}</view>
+  </view>
+</view>
+
+
+<view wx:else class="city_box">
+  <view wx:for="{{citylistdata}}" wx:key="index">
+    <view class="Addres">{{item.title}}</view>
+    <view wx:for="{{item.lists}}"  wx:key="index">
+      <view class="city_block_item" bind:tap="Cityblock">{{item}}</view>
+    </view>
+  </view>
+</view>

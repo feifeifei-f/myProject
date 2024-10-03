@@ -1,0 +1,183 @@
+/* pages/wxchat/wxchat.wxss */
+page {
+  width: 100%;
+  height: 100%;
+
+  image {
+    width: 1.6rem;
+    height: 1.6rem;
+  }
+}
+
+.content {
+  height: 100%;
+  display: flex;
+  padding-top: 3.95rem;
+
+  // 内容滚动
+  .content-info {
+
+    // 内容
+    .content-list {
+      margin-bottom: 88rpx;
+
+      // 条
+      .content-li {
+        clear: both;
+        overflow: hidden;
+        z-index: 0 !important;
+
+        // 别人
+        .left-info {
+          clear: both;
+          margin: 20rpx 20rpx;
+          z-index: 0;
+
+          &::after {
+            content: '';
+            clear: both;
+            display: block;
+            height: 0;
+            visibility: hidden;
+          }
+
+          .myhead {
+            float: left;
+            width: 88rpx;
+            height: 88rpx;
+            background: #efefef;
+          }
+
+          .myinfo {
+            display: block;
+            float: left;
+            background: #75c475;
+            max-width: 490rpx;
+            margin-top: 10rpx;
+            margin-left: 20rpx;
+            padding: 10rpx 18rpx;
+            border-radius: 15rpx;
+          }
+
+
+        }
+
+        // 自己
+        .right-info {
+          clear: both;
+          margin: 10rpx 20rpx;
+
+          &::after {
+            content: '';
+            clear: both;
+            display: block;
+            height: 0;
+            visibility: hidden;
+          }
+
+          // 我的内容
+          .myinfo {
+            display: block;
+            float: right;
+            background: #efefef;
+            max-width: 480rpx;
+            margin-top: 10rpx;
+            margin-right: 20rpx;
+            padding: 10rpx 18rpx;
+            border-radius: 15rpx;
+          }
+
+          // 我的头像
+          .myhead {
+            float: right;
+            width: 88rpx;
+            height: 88rpx;
+            background-color: #efefef;
+          }
+        }
+
+      }
+    }
+  }
+
+}
+
+/* 底部 */
+.foot-input {
+  width: 96vw;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  border-top: 1px solid #DDDDDD;
+  background: #f4f4f4;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.4rem 0.5rem;
+
+  .inp_box {
+    display: flex;
+    align-items: center;
+
+    // 语音图标
+    .voice_img {
+      margin-right: 0.5rem;
+    }
+  }
+
+  .righ_box {
+    width: 379.5px;
+    display: flex;
+    align-items: center;
+
+    // background: #999;
+    // 输入框
+    .send-input {
+      // flex: 1;
+      // min-width: 16rem;
+      width: 18.5rem;
+      height: 1.4rem;
+      transition: width 0.5s ease;
+      background: rgb(255, 255, 255);
+      padding: 0.7rem 0.5rem 0.4rem;
+      font-size: 1rem;
+      border-radius: 0.3rem;
+
+    }
+
+    // 语音按钮
+    .van-button--default {
+
+      width: 19.5rem;
+      height: 2.5rem;
+      color: #000;
+      font-size: 1rem;
+      border: none;
+      border-radius: 0.3rem;
+    }
+
+    // 表情按钮
+    .expression_img {
+      margin: 0 0.5rem;
+    }
+
+    // 添加按钮
+    .add_msg {}
+
+    // 发送按钮
+    .send-btn {
+      width: 3.2rem;
+      transition: width 0.5s ease;
+      height: 2rem;
+      line-height: 2rem;
+      text-align: center;
+      font-size: 0.9rem;
+      background: #16AA51;
+      color: #ffffff;
+      border-radius: 0.3rem;
+      // margin-right: 1rem;
+    }
+  }
+
+
+}

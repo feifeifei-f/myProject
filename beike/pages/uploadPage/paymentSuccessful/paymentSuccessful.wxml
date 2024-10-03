@@ -1,0 +1,25 @@
+<view class="container">
+  <view class="logo_box">
+    <image class="logo_icon" src="../../../images/releasehouse_icon/logo.png" mode="" />
+    <view class="success_text">支付成功</view>
+  </view>
+  <view class="content_box">
+    <view>
+      <text>订单编号</text><text>18111123435883</text>
+    </view>
+    <view>
+      <text>订单金额</text><text> 10.00 元</text>
+    </view>
+    <view>
+      <text>支付方式</text><text> 微信</text>
+    </view>
+    <view>
+      <text>支付时间</text><text>2020-12-12 17:00</text>
+    </view>
+
+  </view>
+  <view class="but_box">
+    <van-button round type="info" plain bind:click="toMyrelease">查看发布</van-button>
+    <van-button round type="info" bind:tap="continuePublishing">继续发布</van-button>
+  </view>
+</view>

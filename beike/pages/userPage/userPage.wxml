@@ -1,0 +1,28 @@
+<view class="container">
+  <!-- 顶部 -->
+  <view class="top_box">
+    <custom-card icons="{{icons}}" />
+    <view class="title">我的个人信息</view>
+    <view></view>
+  </view>
+
+  <!-- 信息 -->
+  <view class="userBox">
+    <view class="user_box">
+      <text class="left_type">手机号</text>
+      <text class="user_tel">{{userTel}}</text>
+    </view>
+    <view class="user_box">
+      <text class="left_type">身份认证</text>
+      <image src="../../images/user_image/right.png" mode=""/>
+    </view>
+    <view class="user_box">
+      <text class="left_type">注销账号</text>
+      <image src="../../images/user_image/right.png" mode=""/>
+    </view>
+  </view>
+
+  <view class="closeLogin_box">
+    <van-button type="info" bind:click="closelogin">退出登录</van-button>
+  </view>
+</view>

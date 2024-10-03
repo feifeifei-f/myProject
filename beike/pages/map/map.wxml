@@ -1,0 +1,34 @@
+<view class="map-container">
+  <map id="myMap" class="map" latitude="{{latitude}}" longitude="{{longitude}}" show-location="{{isShowPosition}}" show-compass="{{isShowCompass}}" show-scale="{{isShowScale}}" markers="{{markers}}" scale="{{scale}}" polygons="{{polygons}}" polyline="{{polyline}}" include-points="{{includePoints}}" enable-zoom bindregionchange="onMapChange" bindtap="onMapTap" bindmarkertap="onMapMarkTap" bindcallouttap="onMapCalloutTap">
+    <!-- 定位按钮 -->
+    <cover-view class="locationBg" catchtap='onClickLocation'>
+
+      <cover-image class="locationIcon" src="https://img0.baidu.com/it/u=4078679183,2233418782&fm=253&app=120&size=w931&n=0&f=JPEG&fmt=auto?sec=1722099600&t=da8b7b5beca4cf4fa95f11d20ad2539e" />
+    </cover-view>
+
+    <!-- 大头针中间文字 -->
+    <cover-view slot="callout">
+      <cover-view wx:for="{{markers}}" wx:key='index' marker-id="{{item.id}}">
+        <cover-view> {{ (item.id + 1) }}</cover-view>
+      </cover-view>
+    </cover-view>
+
+  </map>
+
+</view>
+<button bind:tap="showPopup">规划路线</button>
+<van-popup
+  show="{{ show }}"
+  position="bottom"
+  custom-style="height: 50%;"
+  bind:close="onClose"
+>
+<van-tabs color="#1196db" type="card" active="{{ active }}" bind:change="onChange">
+  <van-tab title="驾车"></van-tab>
+  <van-tab title="步行"></van-tab>
+  <van-tab title="骑行"></van-tab>
+</van-tabs>
+</van-popup>
+
+
+

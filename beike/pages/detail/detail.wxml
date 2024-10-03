@@ -1,0 +1,244 @@
+<view class="container">
+  <!-- 顶部 -->
+  <custom-card icons="{{icons}}" />
+
+  <!-- 图片盒子 -->
+  <view class="box">
+    <view wx:if="{{act==0}}" class="picture_box" bind:tap="toHouseViewing">
+      <image src="{{item.img2}}" mode="" />
+      <view class="vr_animation">
+        <image class="vr-icon follower" src="../../images/detail_image/vr_animation1.png" mode="" />
+      </view>
+    </view>
+    <view wx:if="{{act==1}}" class="picture_box">
+      <swiper class="swiper" autoplay="true" circular="true" interval="3000" duration="500">
+        <swiper-item class="swiper_item" wx:for="{{banners}}" wx:key="index">
+          <image src="{{item}}" mode="" />
+        </swiper-item>
+      </swiper>
+    </view>
+    <view wx:if="{{act==2}}" class="picture_box">
+      <image src="{{item.img3}}" class="vr_img" mode="" />
+    </view>
+    <view wx:if="{{act==3}}" class="picture_box">
+      <image src="{{item.img5}}" mode="" />
+    </view>
+    <!-- 阴影 -->
+    <view class="Gradient"></view>
+    <!-- 导航 -->
+    <view class="nav_box">
+      <view wx:for="{{navs}}" wx:key="index" class="{{act===index?'active':''}}" bind:tap="changeNav" data-param="{{index}}">{{item}}</view>
+    </view>
+  </view>
+
+  <!-- 主体内容 -->
+  <view class="bot_content">
+    <!-- 基本信息 -->
+    <view class="information">
+      <!-- 标题 -->
+      <view class="house_title">
+        {{item.title}}
+      </view>
+      <!-- 功能 -->
+      <view class="function_box">
+        <view class="function_left">
+          <text>随时看房</text>
+          <text>随时看房</text>
+        </view>
+        <view class="function_right">
+          <view>
+            <image src="../../images/detail_image/contrast.png" mode="" />
+            <text>对比</text>
+          </view>
+          <view>
+            <image src="../../images/detail_image/collect.png" mode="" />
+            <text>关注</text>
+          </view>
+        </view>
+      </view>
+      <!-- 面积 -->
+      <view class="area_box">
+        <view>
+          <view><text>{{item.price}}万</text></view>
+          <text class="size_text">售价</text>
+        </view>
+        <view>
+          <view>2室2厅</view>
+          <text class="size_text">房型</text>
+        </view>
+        <view>
+          <view>77.53 <text class="symbol">m²</text></view>
+          <text class="size_text">建筑面积</text>
+        </view>
+      </view>
+      <!-- VR -->
+      <view class="VR_box">
+        <view>
+          <image src="../../images/detail_image/vr.png" mode="" />
+          <text>VR语音带看</text>
+        </view>
+        <view>
+          <image src="../../images/detail_image/video.png" mode="" />
+          <text>直播附近好房</text>
+        </view>
+      </view>
+
+      <!-- 房子信息 -->
+      <view class="house_information">
+        <!-- 单价 -->
+        <view class="type_box">
+          <view class="left_box">
+            <text>单价:</text>
+            <text>{{item.price1}}</text>
+          </view>
+        </view>
+        <!-- 楼层 -->
+        <view class="type_box">
+          <view class="left_box">
+            <text>楼层</text>
+            <view class="left_text">
+              <text>低楼层/18</text>
+              <image src="../../images/detail_image/detail.png" mode="" />
+            </view>
+            <text style="color:#3072F6">咨询楼层</text>
+          </view>
+          <image class="right_img" src="../../images/detail_image/right.png" mode="" />
+        </view>
+        <!-- 套内 -->
+        <view class="type_box">
+          <view class="left_box">
+            <text>套内</text>
+            <text class="left_text">低楼层/18</text>
+            <text style="color:#3072F6">咨询套内使用面积</text>
+          </view>
+          <image class="right_img" src="../../images/detail_image/right.png" mode="" />
+        </view>
+        <!-- 挂牌 -->
+        <view class="type_box">
+          <view class="left_box">
+            <text>挂牌</text>
+            <text class="left_text">2024.4.21</text>
+            <text class="toward">朝向</text>
+            <text>南</text>
+            <text>北</text>
+          </view>
+        </view>
+        <!-- 年代 -->
+        <view class="type_box">
+          <view class="left_box">
+            <text>年代</text>
+            <text class="left_text">{{item.year}}</text>
+            <text>电梯</text>
+            <text>有电梯</text>
+          </view>
+        </view>
+        <!-- 权属 -->、
+        <view class="type_box">
+          <view class="left_box">
+            <text>权属</text>
+            <view class="left_text">
+              <text>动迁安置房</text>
+              <image src="../../images/detail_image/detail.png" mode="" />
+            </view>
+            <text>楼型</text>
+            <text>板楼</text>
+            <image src="../../images/detail_image/detail.png" mode="" />
+          </view>
+        </view>
+        <!-- 用途 -->
+        <view class="type_box">
+          <view class="left_box">
+            <text>用途</text>
+            <text>普通住宅</text>
+          </view>
+        </view>
+        <!-- 装修 -->
+        <view class="type_box">
+          <view class="left_box">
+            <text>装修</text>
+            <text>简装房，重新装修预估11.7万</text>
+          </view>
+          <image class="right_img" src="../../images/detail_image/right.png" mode="" />
+        </view>
+        <!-- 小区 -->
+        <view class="type_box">
+          <view class="left_box">
+            <text>小区</text>
+            <text>金星园</text>
+          </view>
+          <image class="right_img" src="../../images/detail_image/right.png" mode="" />
+        </view>
+        <!-- 其他 -->
+        <view class="type_box">
+          <view class="left_box">
+            <text>其他</text>
+            <text>产权年限 梯户比..</text>
+          </view>
+          <image class="right_img" src="../../images/detail_image/right.png" mode="" />
+        </view>
+        <!-- 首付 -->
+        <view class="type_box">
+          <view class="left_box">
+            <text>首付</text>
+            <text>资讯实际收付及税费</text>
+          </view>
+          <image class="right_img" src="../../images/detail_image/right.png" mode="" />
+        </view>
+        <!-- 榜单 -->
+        <view class="type_box">
+          <view class="left_box">
+            <text>榜单</text>
+            <image style="margin: 0 0.5rem 0 1rem" src="../../images/detail_image/LIST.png" mode="" />
+            <text style="color: orange;">{{item.rob}}</text>
+          </view>
+          <image class="right_img" src="../../images/detail_image/right.png" mode="" />
+        </view>
+        <!-- 服务 -->
+        <view class="type_box">
+          <view class="left_box">
+
+            <text>服务</text>
+            <image style="margin: 0 0.5rem 0 1rem" src="../../images/detail_image/guard.png" mode="" />
+            <text style="color: #000;">全程守护 购房安心</text>
+          </view>
+          <image class="right_img" src="../../images/detail_image/right.png" mode="" />
+        </view>
+        <!-- 风险提示 -->
+        <view class="prompt_box">
+          <view>
+            <image src="../../images/detail_image/risk.png" mode="" />
+            <text>风险提示</text>
+          </view>
+          <view>
+            <image src="../../images/detail_image/document.png" mode="" />
+            <text>房源核验码：20202554554545</text>
+          </view>
+          <view></view>
+        </view>
+
+      </view>
+    </view>
+    <!-- 周边配套 -->
+    <view class="Surrounding_facilities">
+      <!-- 标题 -->
+      <view class="title_box">
+        <view class="title">周边配套</view>
+        <view class="top_left" bind:tap="toMapPage">
+          <text>查看更多</text>
+          <image src="../../images/detail_image/right.png" mode="" />
+        </view>
+      </view>
+      <!-- 地图 -->
+      <view class="map_box" bind:tap="toMapPage">
+        <image src="../../images/detail_image/map.png" mode="" />
+      </view>
+      <!-- 周边地址导航 -->
+      <view class="Surrounding_address">
+        <view class="address_nav">
+          <view wx:for="{{address}}" wx:key="index" class="{{addressInd===index?'active':''}}" bind:tap="changeNav" data-address="{{index}}">{{item}}</view>
+        </view>
+        <detail-address />
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,45 @@
+<!-- 聊天信息 -->
+<custom-card icons="{{icons}}" />
+<view class="content">
+  <scroll-view class="content-info" scroll-y scroll-top="{{scrollTop}}">
+    <view class="content-list">
+      <view class="content-li" wx:for="{{messages}}" wx:key="{{index}}">
+        <!-- 右边 -->
+        <block wx:if="{{item.role === 'self'}}">
+          <view class="right-info">
+            <image class="myhead" src="{{head.self}}"></image>
+            <text class="myinfo">{{item.text}}</text>
+          </view>
+        </block>
+        <!-- 左边 -->
+        <block wx:else>
+          <view class="left-info">
+            <image class="myhead" src="{{head.server}}"></image>
+            <text class="myinfo">{{item.text}}</text>
+          </view>
+        </block>
+      </view>
+    </view>
+  </scroll-view>
+</view>
+<!-- 操作区 -->
+<view class="foot-input">
+  <view class="inp_box">
+    <!-- 语音图标 -->
+    <image wx:if="{{voiceflag}}" src="../../images/message_icon/voice.png" class="voice_img" bind:tap="changeVoice" mode="" />
+    <image wx:else src="../../images/message_icon/keyboard.png" class="voice_img" bind:tap="changeVoice" mode="" />
+
+  </view>
+
+  <!-- 右边 -->
+  <view class="righ_box">
+    <textarea wx:if="{{voiceflag}}" type="text" class="send-input" placeholder="请输入聊天内容..." value="{{inputValue}}" bindinput="onInput" bindconfirm="sendMessage"></textarea>
+    <van-button wx:else type="default" size="small">按住 说话</van-button>
+    <image src="../../images/message_icon/expression.png" class="expression_img" mode="" />
+    
+    <image wx:if="{{!inputValue}}" src="../../images/message_icon/add1.png" class="add_img" mode="" />
+    <view wx:else class="{{inputValue?'send-btn':''}}" bindtap="sendMessage">发送</view>
+  </view>
+
+
+</view>

@@ -1,0 +1,148 @@
+<!--pages/user/user.wxml-->
+<view class="container">
+  <!-- 顶部标题 -->
+  <view class="header_title">个人中心</view>
+  <!-- 注册/登录 -->
+  <view class="Login_box">
+    <image src="{{users.userImg}}" mode="" />
+    <view class="user_tel" bind:tap="handelLogin">{{users.userName}}</view>
+  </view>
+
+
+  <!-- 功能 -->
+  <view class="function_box">
+    <view class="function_box_gn">
+      <image src="../../images/user_image/user1.png" mode="" />
+      <text>订阅</text>
+    </view>
+    <view class="function_box_gn">
+      <image src="../../images/user_image/user2.png" mode="" />
+      <text>关注</text>
+    </view>
+    <view class="function_box_gn">
+      <image src="../../images/user_image/user3.png" mode="" />
+      <text>浏览</text>
+    </view>
+    <view class="function_box_gn">
+      <image src="../../images/user_image/user4.png" mode="" />
+      <text>看房管理</text>
+    </view>
+  </view>
+
+  <!-- 添加房源 -->
+  <view class="add_house_box">
+    <!-- 顶部 -->
+    <view class="my_home">
+      <text>我家</text>
+      <text>|</text>
+      <text>"3000万业主的房产管家"</text>
+    </view>
+    <!-- 添加 -->
+    <view class="add_house">
+      <image src="../../images/user_image/add.png" mode="" />
+      <view class="title_box">
+        <view class="title">添加房源-了解房屋估值</view>
+        <view class="text">全城张幅排名·收益峰值纵览</view>
+      </view>
+    </view>
+    <!-- 按钮 -->
+    <view class="bot_btns">
+      <view class="Button">
+        <image src="../../images/user_image/user5.png" mode="" />
+        <text>我要卖房</text>
+      </view>
+      <view class="Button">
+        <image src="../../images/user_image/user6.png" mode="" />
+        <text>我要出租</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- cell单元格 -->
+  <view class="cell_Box">
+    <view class="cell_card">
+      <image class="image" src="../../images/user_image/user7.png" mode="" />
+      <view class="text_box">
+        <text>我的钱包</text>
+        <image class="icon" src="../../images/user_image/right.png" mode="" />
+      </view>
+    </view>
+    <view class="cell_card">
+      <image class="image" src="../../images/user_image/user8.png" mode="" />
+      <view class="text_box">
+        <text>我的租约</text>
+        <image class="icon" src="../../images/user_image/right.png" mode="" />
+      </view>
+    </view>
+    <view class="cell_card" bind:tap="toMyrelease" >
+      <image class="image" src="../../images/user_image/user9.png" mode="" />
+      <view class="text_box">
+        <text>我的发布</text>
+        <image class="icon" src="../../images/user_image/right.png" mode="" />
+      </view>
+    </view>
+    <view class="cell_card">
+      <image class="image" src="../../images/user_image/user10.png" mode="" />
+      <view class="text_box">
+        <text>我的优惠券</text>
+        <image class="icon" src="../../images/user_image/right.png" mode="" />
+      </view>
+    </view>
+    <view class="cell_card">
+      <image class="image" src="../../images/user_image/user11.png" mode="" />
+      <view class="text_box">
+        <text>生活订单</text>
+        <image class="icon" src="../../images/user_image/right.png" mode="" />
+      </view>
+    </view>
+    <view class="cell_card">
+      <image class="image" src="../../images/user_image/user12.png" mode="" />
+      <view class="text_box">
+        <text>找房卡</text>
+        <image class="icon" src="../../images/user_image/right.png" mode="" />
+      </view>
+    </view>
+    <view class="cell_card">
+      <image class="image" src="../../images/user_image/user13.png" mode="" />
+      <view class="text_box">
+        <text>共筑好家订单</text>
+        <image class="icon" src="../../images/user_image/right.png" mode="" />
+      </view>
+    </view>
+    <view class="cell_card">
+      <image class="image" src="../../images/user_image/user14.png" mode="" />
+      <view class="text_box">
+        <text>关注服务号</text>
+        <image class="icon" src="../../images/user_image/right.png" mode="" />
+      </view>
+    </view>
+    <view class="cell_card">
+      <image class="image" src="../../images/user_image/user15.png" mode="" />
+      <view class="text_box">
+        <text>客服电话</text>
+        <image class="icon" src="../../images/user_image/right.png" mode="" />
+      </view>
+    </view>
+    <view class="cell_card">
+      <image class="image" src="../../images/user_image/user16.png" mode="" />
+      <view class="text_box">
+        <text>关于我们</text>
+        <image class="icon" src="../../images/user_image/right.png" mode="" />
+      </view>
+    </view>
+    <view class="cell_card">
+      <image class="image" src="../../images/user_image/user17.png" mode="" />
+      <view class="text_box">
+        <text>加入贝壳</text>
+        <image class="icon" src="../../images/user_image/right.png" mode="" />
+      </view>
+    </view>
+    <view class="cell_card">
+      <image class="image" src="../../images/user_image/user18.png" mode="" />
+      <view class="text_box">
+        <text>隐私政策</text>
+        <image class="icon" src="../../images/user_image/right.png" mode="" />
+      </view>
+    </view>
+  </view>
+</view>
